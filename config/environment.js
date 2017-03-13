@@ -16,6 +16,12 @@ module.exports = function(environment) {
         Date: false
       }
     },
+        apiKey: "AIzaSyBlfR4TYgjjpqkqG-ZLl7J8-Re_waLIZXQ",
+        authDomain: "blackboards-8b141.firebaseapp.com",
+        databaseURL: "https://blackboards-8b141.firebaseio.com",
+        storageBucket: "blackboards-8b141.appspot.com"
+    },
+
 
     APP: {
       // Here you can pass flags/options to your application instance
