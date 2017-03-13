@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('supplementarymaterials');
+  this.route('ember', {path: '/ember/:embersupp_id'});
 });
 
 export default Router;
