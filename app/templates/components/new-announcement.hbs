@@ -1,7 +1,7 @@
-{{#if addNewAnnouncement}}
+{{#if newAnnouncementForm}}
   <h1>New Announcement</h1>
   <div>
-    <form>
+    <form> <!-- new announcement form ++++++++++++++-->
       <div class="form-group">
         <label for="date">Date: </label>
         {{input value=date id="date"}}
@@ -11,8 +11,14 @@
         <label for="content">Content: </label>
         {{input value=content id="content"}}
       </div>
+
+      <div class="form-group">
+        <label for="author">Author: </label>
+        {{input value=author id="author"}}
+      </div>
+
       <button {{action 'saveAnnouncement'}}>Save</button>
-    </form>
+    </form> <!-- end of new announcement form +++++++++-->
   </div>
 {{else}}
   <button {{action 'announcementFormShow'}}>New Announcement</button>

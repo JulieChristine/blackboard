@@ -5,5 +5,6 @@
     <li>Announcement: {{announcement.content}}</li>
     <li>Date: {{announcement.date}}</li>
     <li>Author: {{announcement.author}}</li>
+    {{update-announcement announcement=announcement update="update" destroyAnnouncement="destroyAnnouncement"}}
   {{/each}}
 </ul>
