@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     },
 
     delete(announcement) {
-      if (confirm("Are you sure you want to delete this announcement?")) {
+      if (confirm("Delete this announcement?")) {
         this.sendAction("destroyAnnouncement", announcement);
       }
     },

@@ -1,8 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+//hide the new announcement form by default
   newAnnouncementForm: false,
+
+
   actions: {
+//show the new announcement form when clicking on the New button
     announcementFormShow(){
       this.set('newAnnouncementForm', true);
     },
