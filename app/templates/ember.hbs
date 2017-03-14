@@ -1,0 +1,31 @@
+<div style="text-align: center">
+  <h1>Checkout submitted ember supplements</h1>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-lg-1" id="leftfixed">
+       <div class="affix">
+         <div class="mycontent-left">
+           {{new-submission}}
+       </div>
+        </div>
+    </div>
+    <div class="col-lg-11">
+      <div class="mycontent-right">
+        <ul style="list-style: none;">
+            {{#each model as |blackboard|}}
+          <li>
+            <a href="{{blackboard.link}}">{{blackboard.name}}</a>
+          </li>
+          <li>
+            {{blackboard.description}}
+          </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+</div>
