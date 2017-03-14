@@ -1,20 +1,10 @@
-/*display course material*/
 
-.course-detail {
 
+.mycontent-left {
 }
 
-.course-title {
-
+#leftfixed {
 }
-.course-intro {
-
-}
-.course.content {
-
-}
-
-/*course tile*/
-.content-tile {
-
+.mycontent-right {
+  margin-left: 200px;
 }

@@ -1,0 +1,25 @@
+{{#if addNewLink}}
+  <h3>Submit a link</h3>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="link">Enter link here</label>
+        {{input value=link id="link"}}
+      </div>
+
+      <div class="form-group" id="titleform" style="width: 300px">
+        <label for="title">Give it a quality headline</label>
+        {{input value="e.g. Guide to ember helpers" id="title"}}
+      </div>
+
+      <div class="form-group">
+        <label for="description">Give a little description</label>
+        {{input value=description id="author"}}
+      </div>
+
+      <button {{action 'submitLink'}}>Submit</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'linkFormShow'}}>Submit a New Link</button>
+ {{/if}}
