@@ -9,6 +9,9 @@ module.exports = function(defaults) {
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
+  app.import('bower_components/jquery-ui/jquery-ui.js');
+  // app.import('bower_components/jquery-ui/ui/tooltip.js');
+
   //
   // If you need to use different assets in different
   // environments, specify an object as the first parameter. That
