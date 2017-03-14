@@ -1,6 +1,7 @@
 {
   "name": "blackboard",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "handlebars": "2.0.0"
   }
 }

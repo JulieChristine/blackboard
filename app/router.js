@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('student');
   this.route('staff');
   this.route('speaker');
+  this.route('calendar');
 });
 
 export default Router;
