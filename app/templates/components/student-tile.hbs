@@ -1,0 +1,11 @@
+<li>
+  {{student.name}}
+<br>
+  {{#if isImageShowing}}
+  <img src={{student.info}} {{action 'imageHide'}}>
+  {{else}}
+  <button {{action 'imageShow'}}>contact details</button>
+  {{/if}}
+  <br>
+  <br>
+</li>
