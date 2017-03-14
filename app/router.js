@@ -8,6 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('announcement');
+  this.route('contact');
+  this.route('student');
+  this.route('staff');
+  this.route('speaker');
+  this.route('calendar');
   this.route('course');
   this.route('supplementarymaterials');
   this.route('ember');
