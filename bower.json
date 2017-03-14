@@ -1,6 +1,7 @@
 {
   "name": "blackboard",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "jquery-ui": "^1.12.1"
   }
 }
