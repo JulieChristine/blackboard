@@ -1,0 +1,9 @@
+{{new-announcement saveAnnouncement=saveAnnouncement}}
+
+<ul>
+  {{#each model as |announcement|}}
+    <li>Announcement: {{announcement.content}}</li>
+    <li>Date: {{announcement.date}}</li>
+    <li>Author: {{announcement.author}}</li>
+  {{/each}}
+</ul>
