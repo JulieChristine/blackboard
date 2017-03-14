@@ -1,0 +1,8 @@
+@import "ember-power-calendar";
+@import "ember-bootstrap/bootstrap";
+
+.demo-calendar-medium {
+  @include ember-power-calendar($cell-size: 50px);
+}
+
+@import "ember-bootstrap/bootstrap";
