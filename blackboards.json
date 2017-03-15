@@ -20,5 +20,27 @@
     "content": "Please drink tea, or else...",
     "date": "2017-02-16",
     "author": "Lavine"
-  }]
+  }],
+
+  "courses": [{
+    "name": "Ember Introduction",
+    "image": "",
+    "week":"2 (weekend work)",
+    "content": "/ember-introduction.html",
+    "toc": "CREATE FILE!!!!"
+  }, {
+    "name": "Ember Firebase",
+    "image": "",
+    "week":"2 (weekend work)",
+    "content": "/ember-firebase.html",
+    "toc": "CREATE FILE!!!!"
+  }, {
+    "name": "Angular Introduction",
+    "image": "",
+    "week":"1 (weekend work)",
+    "content": "/angular-introduction.html",
+    "toc": "CREATE FILE!!!!"
+  }],
+
+
 }

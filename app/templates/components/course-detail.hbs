@@ -1,21 +1,12 @@
-<!--Course details-->
-<div class="course-detail">
-  <div class="course-title">
-    <h2>{{course.name}}</h2>
-  </div>
-  <div class="course-intro">
-    <p>{{course.intro}}</p>
-  </div>
+<!--Julie -->
 
-  <!--Link to GLOSSARY part-->
-
-
-  <!--Actual course material-->
-  <div class="course-content">
-    {{course.content}}
-  </div>
-
-
-
-
+<!--Course content-->
+<div class="title">
+  {{course.name}}:{{course.week}}
 </div>
+
+<!--display Table of Content-->
+{{course.toc}}
+
+<!--display the content of the course-->
+{{course.content}}
