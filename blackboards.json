@@ -21,7 +21,6 @@
     "date": "2017-02-16",
     "author": "Lavine"
   }],
-
   "courses": [{
     "name": "Ember Introduction",
     "image": "",
@@ -40,7 +39,7 @@
     "week":"1 (weekend work)",
     "content": "/angular-introduction.html",
     "toc": "CREATE FILE!!!!"
-  }],
+  }]
 
 
 }
