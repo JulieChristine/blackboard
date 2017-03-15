@@ -15,12 +15,15 @@ Router.map(function() {
   this.route('calendar');
   this.route('course');
   this.route('supplementarymaterials');
-  this.route('ember');
+  this.route('ember', function() {
+    this.route('show', { path: '/:blackboard_id' });
+  });
   this.route('angular');
   this.route('course-ember');
   this.route('course-angular');
   this.route('ember-introduction');
   this.route('ember-firebase');
+  this.route('discussion', {path: '/discussion/:blackboard_id'});
 });
 
 export default Router;

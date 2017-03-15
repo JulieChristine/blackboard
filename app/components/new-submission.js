@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   addNewLink: true,
+
   actions: {
     linkFormShow() {
       this.set('addNewLink', true);
@@ -10,11 +11,14 @@ export default Ember.Component.extend({
     saveLink() {
       var params = {
         link: this.get('link'),
-        title: this.get('title'),
+        name: this.get('name'),
         description: this.get('description')
       };
-      this.set('addNewLink', false);
-      this.sendAction('saveLink2', params);
+      this.set('link',"");
+      this.set('name',"");
+      this.set('description',"");
+      this.set('addNewLink', true);
+      this.sendAction('saveLink', params);
     }
   }
 });

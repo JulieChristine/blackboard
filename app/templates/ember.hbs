@@ -1,5 +1,5 @@
 <div style="text-align: center">
-  <h1>Checkout submitted ember supplements</h1>
+  <h1>ember.js supplements</h1>
 </div>
 <br>
 <br>
@@ -7,25 +7,26 @@
 <br>
 
 <div class="row">
-    <div class="col-lg-1" id="leftfixed">
+    <div class="col-md-2" id="leftfixed">
        <div class="affix">
-         <div class="mycontent-left">
-           {{new-submission}}
+         <img style=""src="http://www.gravatar.com/avatar/0cf15665a9146ba852bf042b0652780a?s=200"/>
+         <div style="margin-left: 15px" class="mycontent-left">
+           {{new-submission saveLink="saveLink"}}
        </div>
         </div>
     </div>
-    <div class="col-lg-11">
+    <div class="col-md-10">
       <div class="mycontent-right">
         <ul style="list-style: none;">
             {{#each model as |blackboard|}}
           <li>
-            <a href="{{blackboard.link}}">{{blackboard.name}}</a>
+            {{submission-tile blackboard=blackboard}}
           </li>
-          <li>
-            {{blackboard.description}}
-          </li>
+          {{log blackboard.id}}
+          {{#link-to 'discussion' blackboard.id}}<strong>Discussion</strong>{{/link-to}}
             {{/each}}
         </ul>
     </div>
 </div>
 </div>
+{{outlet}}

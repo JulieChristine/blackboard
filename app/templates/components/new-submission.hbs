@@ -2,22 +2,22 @@
   <h3>Submit a link</h3>
   <div>
     <form>
-      <div class="form-group">
-        <label for="link">Enter link here</label>
-        {{input value=link id="link"}}
+      <div class="form-group" style="width: 300px;">
+        <label for="link">Enter link here</label><br>
+        {{input value=link id="link" placeholder="URL"}}
       </div>
 
       <div class="form-group" id="titleform" style="width: 300px">
-        <label for="title">Give it a quality headline</label>
-        {{input value="e.g. Guide to ember helpers" id="title"}}
+        <label for="name">Give it a quality headline</label>
+        {{input value=name id="name" placeholder="e.g. How to build a website"}}
       </div>
 
       <div class="form-group">
-        <label for="description">Give a little description</label>
-        {{input value=description id="author"}}
+        <label for="description">Give a description</label><br>
+        {{input value=description id="description" placeholder="a little something extra"}}
       </div>
 
-      <button {{action 'submitLink'}}>Submit</button>
+      <button {{action 'saveLink'}}>Submit</button>
     </form>
   </div>
 {{else}}
