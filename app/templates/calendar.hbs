@@ -6,3 +6,11 @@
 
   {{log calendar.selected._i}}
 {{/power-calendar}}
+
+<ul>
+  {{#each model as |event|}}
+    {{event-tile event=event}}
+  {{/each}}
+  
+  {{new-event saveEvent="saveEvent"}}
+</ul>
