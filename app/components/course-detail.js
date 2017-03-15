@@ -4,7 +4,8 @@ import Ember from 'ember';
 
 //If we have delete button action we put it here
 export default Ember.Component.extend({
-  model() {
+
+  myhtml: function () {
   return new Ember.RSVP.Promise(function (resolve, reject) {
     Ember.$.ajax({
       url: '/ember-introduction.html',
@@ -17,5 +18,5 @@ export default Ember.Component.extend({
       }
     });
   });
-}.property()
+}
 });
