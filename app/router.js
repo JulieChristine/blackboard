@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('staff');
   this.route('speaker');
   this.route('calendar');
-  this.route('course, {path: '/course/:course_id'}');
+  this.route('course', {path: '/course/:course_id'});
   this.route('supplementarymaterials');
   this.route('ember', function() {
     this.route('show', { path: '/:blackboard_id' });
