@@ -45,10 +45,7 @@
     "ember-source": "~2.11.0",
     "ember-welcome-page": "^2.0.2",
     "emberfire": "2.0.6",
-<<<<<<< HEAD
-=======
     "firebase": "3.7.1",
->>>>>>> 60b97aefb8aa250c68dd14c21bd1d9f6a5984951
     "handlebars": "1.1.2",
     "loader.js": "^4.0.10"
   },
