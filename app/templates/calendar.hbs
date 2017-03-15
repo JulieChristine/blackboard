@@ -1,4 +1,8 @@
-{{#power-calendar selected=arrival onSelect=(action (mut arrival) value="moment") as |calendar|}}
+{{#power-calendar
+  selected=selected
+  onSelect=(action (mut selected) value="moment") as |calendar|}}
   {{calendar.nav}}
   {{calendar.days}}
+
+  {{log calendar.selected._i}}
 {{/power-calendar}}

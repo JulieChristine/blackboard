@@ -28,6 +28,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-jshint": "^2.0.1",
+    "ember-cli-moment-shim": "3.0.1",
     "ember-cli-qunit": "^3.0.1",
     "ember-cli-release": "^0.2.9",
     "ember-cli-sass": "6.1.1",
@@ -38,11 +39,16 @@
     "ember-data": "^2.11.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
+    "ember-moment": "7.3.0",
     "ember-power-calendar": "0.3.2",
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.11.0",
     "ember-welcome-page": "^2.0.2",
     "emberfire": "2.0.6",
+<<<<<<< HEAD
+=======
+    "firebase": "3.7.1",
+>>>>>>> 60b97aefb8aa250c68dd14c21bd1d9f6a5984951
     "handlebars": "1.1.2",
     "loader.js": "^4.0.10"
   },

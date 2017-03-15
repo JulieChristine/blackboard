@@ -1,7 +1,12 @@
+<!--Julie-->
+
+<!-- displays information about the course in a tile: only the name and course week, and the ToC-->
 
 <div class="course-tile">
-  {{#link-to 'course' course.id}}
-  <img src={{course.image}} alt={{course.name}}>{{/link-to}}
-  {{course.name}}<br>
-  {{course.week}}
+  {{course.name}}: {{course.week}}
+
+<!-- when you click on the ToC, you go to the course material -->
+  {{#link-to 'course' course.id}}{{course.toc}}
+  {{/link-to}}
+
 </div>
