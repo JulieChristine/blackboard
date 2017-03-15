@@ -1,5 +1,7 @@
 import Ember from 'ember';
+import moment from 'moment';
+
 
 export default Ember.Route.extend({
-  wedding: new Date()
+  birthdate: new Date(1986, 8, 3)
 });
