@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('staff');
   this.route('speaker');
   this.route('calendar');
-  this.route('course');
+  this.route('course, {path: '/course/:course_id'}');
   this.route('supplementarymaterials');
   this.route('ember');
   this.route('angular');
@@ -21,6 +21,7 @@ Router.map(function() {
   this.route('course-angular');
   this.route('ember-introduction');
   this.route('ember-firebase');
+  this.route('subject');
 });
 
 export default Router;
