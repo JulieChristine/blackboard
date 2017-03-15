@@ -16,8 +16,8 @@ export default Ember.Component.extend({
 
     update(announcement){
       var params = {
-        content: this.get("content"),
-        date: this.get('city'),
+        content: this.get('content'),
+        date: this.get('date'),
         author: this.get('author')
       };
       this.set("updateForm", false);
