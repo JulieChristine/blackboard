@@ -1,16 +1,11 @@
-{{#power-calendar
-  selected=selected
-  onSelect=(action (mut selected) value="moment") as |calendar|}}
-  {{calendar.nav}}
-  {{calendar.days}}
+<!--Sheeja-->
 
-  {{log calendar.selected._i}}
-{{/power-calendar}}
+
+<!--this is a title-->
+Weekly calendar:
 
 <ul>
-  {{#each model as |event|}}
-    {{event-tile event=event}}
+  {{#each model.days as |day|}}
+  {{day-tile day=day}}
   {{/each}}
-  
-  {{new-event saveEvent="saveEvent"}}
 </ul>

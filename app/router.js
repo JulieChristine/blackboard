@@ -25,6 +25,7 @@ Router.map(function() {
   this.route('ember-firebase');
   this.route('discussion', {path: '/discussion/:blackboard_id'});
   this.route('subject');
+  this.route('day', {path: '/day/:day_id'});
 });
 
 export default Router;

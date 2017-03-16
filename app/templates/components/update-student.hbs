@@ -1,0 +1,18 @@
+{{#if updateStudentForm}}
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{input value=name id="name" placeholder=student.name}}
+      </div>
+
+      <div class="form-group">
+        <label for="info">Info</label>
+        {{input value=info id="info" placeholder=student.info}}
+      </div>
+      <button {{action 'update' student}}>Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'updateRentalForm'}}>Update</button>
+{{/if}}

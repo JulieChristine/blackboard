@@ -1,4 +1,14 @@
-<li>
-  {{#link-to 'calendar' calendar.selected._i}}
-  {{event}}{{/link-to}}
-</li>
+<!--Sheeja-->
+
+  <li>
+
+    {{event.description}}<br>
+    {{event.date}}<br>
+    {{event.time}}<br>
+    {{event.duration}}<br>
+    {{event.creator}}<br>
+
+    </li>
+
+
+<button {{action 'delete' event}}>Delete Event</button>

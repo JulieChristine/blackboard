@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   addNewEvent: false,
-actions: {
+  actions: {
     eventFormShow() {
     this.set('addNewEvent', true);
   },
@@ -11,7 +11,10 @@ actions: {
     var params = {
       creator: this.get('creator'),
       time: this.get('time'),
-      information: this.get('information')
+      duration: this.get('duration'),
+      description: this.get('description'),
+      date:this.get('date'),
+      day:this.get('day')
     };
     this.set('addNewEvent', false);
     this.sendAction('saveEvent', params);

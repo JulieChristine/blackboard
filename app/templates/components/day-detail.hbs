@@ -1,0 +1,8 @@
+
+Events for {{day.today}}
+
+<ul>
+  {{#each day.events as |event|}}
+    {{event-tile event=event}}
+  {{/each}}
+</ul>

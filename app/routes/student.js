@@ -53,4 +53,21 @@ export default Ember.Route.extend({
   model() {
     return students;
   },
+
+  actions:{
+    update(student, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          student.set(key,params[key]);
+        }
+      });
+      student.save();
+      this.transitionTo('student');
+    },
+    delete(student) {
+     if (confirm('Are you sure you want to delete this rental?')) {
+       this.sendAction('destroyStudent', student);
+     }
+  }
+}
 });
