@@ -41,4 +41,33 @@
     "toc": "CREATE FILE!!!!"
   }],
 
+  "events": [{
+    "description": "Lunch and learn",
+    "creator": "Ian",
+    "date":"",
+    "time": "2:00pm",
+    "duration": "1 hour"
+  }, {
+    "description": "Lightening talk",
+    "creator": "Ian",
+    "date":"",
+    "time": "6:00pm",
+    "duration": "20 mins"
+  }],
+
+  "days":[{
+    "today":"Monday"
+  },{
+    "today":"Tuesday"
+  },{
+    "today":"Wednesday"
+  },{
+    "today":"Thursday"
+  },{
+    "today":"Friday"
+  },{
+    "today":"Saturday"
+  },{
+    "today":"Sunday"
+}]
 }

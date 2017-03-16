@@ -2,3 +2,9 @@
     <a target="_blank" href="http://{{blackboard.link}}">{{blackboard.name}}</a>
 </h2>
 {{blackboard.description}}<br>
+{{#link-to 'discussion' blackboard.id}}<strong>Discussion</strong>{{/link-to}}
+<button type="button" class="btn btn-default" {{action 'upVote' blackboard}}>up</button>
+{{blackboard.rating}}
+<button type="button" class="btn btn-default" {{action 'downVote' blackboard}}>down
+
+</button>

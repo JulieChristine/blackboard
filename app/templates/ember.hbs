@@ -20,10 +20,9 @@
         <ul style="list-style: none;">
             {{#each model as |blackboard|}}
           <li>
-            {{submission-tile blackboard=blackboard}}
+            {{submission-tile blackboard=blackboard upVote="upVote" downVote="downVote"}}
           </li>
           {{log blackboard.id}}
-          {{#link-to 'discussion' blackboard.id}}<strong>Discussion</strong>{{/link-to}}
             {{/each}}
         </ul>
     </div>
