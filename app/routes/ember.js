@@ -6,9 +6,9 @@ export default Ember.Route.extend({
     then(function(ember){
       var arr = ember.toArray('rating');
       return arr.sort(function(blackboard1,blackboard2) {
-        return blackboard2.get('rating')-blackboard1.get('rating')
+        return blackboard2.get('rating')-blackboard1.get('rating');
       });
-    })
+    });
 
 
 
