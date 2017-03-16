@@ -18,6 +18,9 @@ export default Ember.Component.extend({
         author: this.get("author")
       };
       this.set('newAnnouncementForm', false);
+      this.set('content', null);
+      this.set('author', null);
+      this.set("date", null);
       this.sendAction('saveAnnouncement', params);
     }
   }
