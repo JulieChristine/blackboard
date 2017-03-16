@@ -1,0 +1,202 @@
+<div id="content"><section>
+  <h1>Ember Data and Firebase</h1>
+  <p>Using hard-coded model data is great for demonstrating the relationship between models, routes and templates, but is very limited in practice. As our application grows users will require the ability to dynamically create, update and delete rentals as they see fit. We cannot reasonably do this with a hard-coded array as our model, because it would require the developer to make all changes to the list of rentals <em>manually</em> by editing the code. </p>
+  <p>However, Ember includes a model data management library called <strong>Ember Data</strong> that will easily provide this functionality. </p>
+  <h2>Generating Ember Data Models</h2>
+  <p>Let's generate our first Ember Data model:</p>
+  <pre><code class="shell hljs ruby"><span class="hljs-variable">$ </span>ember g model rental
+  </code></pre>
+  <p>This will create two files in our application: A model file located at <code>app/models/rental.js</code>, and a test file. We can see this in the text printed in the terminal after running the above command:</p>
+  <pre><code class="shell hljs sql">version: 2.4.2
+    installing model
+    <span class="hljs-operator"><span class="hljs-keyword">create</span> app/models/rental.js
+    installing model-test
+    <span class="hljs-keyword">create</span> tests/unit/models/rental-test.js
+  </span></code></pre>
+  <p>The model file will look something like the following (<em><strong>Note:</strong> This may vary slightly based on the version of Ember you're using. If yours looks different, see the section below.</em>):</p>
+  <div>app/models/rental.js</div>
+  <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> DS <span class="hljs-keyword">from</span> <span class="hljs-string">'ember-data'</span>;
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> DS.Model.extend({
+
+    });
+  </code></pre>
+  <p>This file is essentially a 'blueprint' that lists the attributes each rental should contain. </p>
+  <p>
+  </p><hr>
+  <p></p>
+  <h3>Note on Older Versions</h3>
+  <p>If you're using an older version of Ember, your file may appear different than the example above. The older version does the same thing as the code depicted here, but uses different syntax. If your file is different, replace the contents of your file with the code above in order to follow along more closely with the lessons. Despite being an older version, this should work without issue. </p>
+  <p>
+  </p><hr>
+  <p></p>
+  <p>Next, we'll use the same attributes we included in our hard-coded array of JavaScript objects: <code>owner</code>, <code>city</code>, <code>type</code>, <code>image</code>, and <code>bedrooms</code>: </p>
+  <div>app/models/rental.js</div>
+  <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> DS <span class="hljs-keyword">from</span> <span class="hljs-string">'ember-data'</span>;
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> DS.Model.extend({
+      owner: DS.attr(),
+      city: DS.attr(),
+      type: DS.attr(),
+      image: DS.attr(),
+      bedrooms: DS.attr()
+    });
+  </code></pre>
+  <ul>
+    <li>The <code>DS</code> in this file stands for "data store", and <code>.attr()</code> stands for 'attribute'. This is therefore a list of object <em>attributes</em> we want to save to our <em>data store</em> for each rental we add.</li>
+  </ul>
+  <p>When a <code>DS.Model</code> is exported, as we see in the line <code>export default DS.Model.extend({ ...</code> it is added to the data store. That is, it's being saved to our database. We'll connect a database to our app in just a moment. </p>
+  <h2>Using Firebase with Ember Data</h2>
+  <p>The Ember Data library can actually be configured to save to <em>any</em> persistent data source. We are going to use Firebase databases for our Ember applications. <strong>Firebase</strong> is a cloud database maintained by Google that stores information in JSON format. Before continuing, visit <a href="https://firebase.google.com/" target="_blank">Firebase's website</a> and set up a free account. </p>
+  <h3>Installing EmberFire</h3>
+  <p>We need to configure Ember Data to communicate with Firebase. We can do this by using an <strong>add-on</strong> called <strong><a href="https://www.firebase.com/docs/web/libraries/ember/guide.html" target="_blank">EmberFire</a></strong>. An add-on is code that extends Ember functionality, but is not part of the core Ember codebase. </p>
+  <p>Let's install EmberFire. While located in the top level of your project directory, run the following command:</p>
+  <pre><code class="shell hljs ruby"><span class="hljs-variable">$ </span>ember install emberfire
+  </code></pre>
+  <p>and we see:</p>
+  <pre><code class="shell hljs php">Installed packages <span class="hljs-keyword">for</span> tooling via npm.
+    installing emberfire
+    create app/adapters/application.js
+    install bower package firebase
+    not-cached https:<span class="hljs-comment">//github.com/firebase/firebase-bower.git#^3.0.0</span>
+    resolved https:<span class="hljs-comment">//github.com/firebase/firebase-bower.git#3.0.4</span>
+    Installed browser packages via Bower.
+
+    EmberFire installed.
+
+    CONFIGURATION REQUIRED
+
+    Please update config/environment.js with your firebase settings. You can find these at https:<span class="hljs-comment">//console.firebase.google.com/ by clicking the [Add Firebase to your web app] button on the project overview panel.</span>
+
+    Example:
+
+    <span class="hljs-comment">// config/environment.js</span>
+    <span class="hljs-keyword">var</span> ENV = {
+      locationType: <span class="hljs-string">'auto'</span>,
+      <span class="hljs-comment">// ...</span>
+      firebase: {
+        apiKey: <span class="hljs-string">'xyz'</span>,
+        authDomain: <span class="hljs-string">'YOUR-FIREBASE-APP.firebaseapp.com'</span>,
+        databaseURL: <span class="hljs-string">'https://YOUR-FIREBASE-APP.firebaseapp.com'</span>,
+        storageBucket: <span class="hljs-string">'YOUR-FIREBASE-APP.appspot.com'</span>,
+      },
+
+
+      <span class="hljs-comment">// if using ember-cli-content-security-policy</span>
+      contentSecurityPolicy: {
+        <span class="hljs-string">'script-src'</span>: <span class="hljs-string">''</span><span class="hljs-keyword">self</span><span class="hljs-string">' '</span>unsafe-<span class="hljs-keyword">eval</span><span class="hljs-string">' apis.google.com'</span>,
+        <span class="hljs-string">'frame-src'</span>: <span class="hljs-string">''</span><span class="hljs-keyword">self</span><span class="hljs-string">' https://*.firebaseapp.com'</span>,
+        <span class="hljs-string">'connect-src'</span>: <span class="hljs-string">''</span><span class="hljs-keyword">self</span><span class="hljs-string">' wss://*.firebaseio.com https://*.googleapis.com'</span>
+      },
+
+
+      Installed addon package.
+    </code></pre>
+    <p>This automatically adds emberfire to <code>package.json</code>, firebase to <code>bower.json</code>, and create a new application adapter:</p>
+    <div>app/adapters/application.js</div>
+    <pre><code class="javascript hljs"><span class="hljs-keyword">import</span> FirebaseAdapter <span class="hljs-keyword">from</span> <span class="hljs-string">'emberfire/adapters/firebase'</span>;
+
+      <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> FirebaseAdapter.extend({
+      });
+    </code></pre>
+    <p><strong>Adapters</strong> connect our applications to their data stores. This code is creating an adapter specifically meant for connecting to Firebase. It uses Ember's <a href="https://guides.emberjs.com/v2.3.0/applications/dependency-injection/" target="_blank">Service Injection mechanism</a> to inject it into the application. </p>
+    <p>Don't worry about these specifics yet. For now, just know adapters are responsible for connecting an application to its store. It's not very common to add code to our adapters, especially when using pre-existing tools like EmberFire and Firebase. </p>
+    <h3>Configuring Firebase</h3>
+    <p><strong>Firebase is used extensively in JavaScript unit, but we also lean on it heavily in Android unit. Any time you spend understanding how to interact with Firebase now will help you tremendously in the future.</strong></p>
+    <p>For now, let's configure our Firebase URL and API key. The adapter we just generated will handle connecting to Firebase, but we need to let it know our API key and <em>where</em> our Firebase data store is located. </p>
+    <p>We'll need to log into our Firebase account and create a new project by clicking the <em>CREATE NEW PROJECT</em> button on the Firebase dashboard. In this example, we are using a Firebase project with the same name as our Ember app: <em>super-rentals</em>. </p>
+    <p>We'll add a few lines in the <code>ENV</code> variable in <code>config/environment.js</code> specifying config info for the app we've just created on Firebase's website. Ember will use this info to locate and communicate with our <code>super-rentals</code> Firebase application:</p>
+    <div>config/environment.js</div>
+    <pre><code class="javascript hljs"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">environment</span>) </span>{
+      <span class="hljs-keyword">var</span> ENV = {
+        modulePrefix: <span class="hljs-string">'super-rentals'</span>,  # This will differ depending on what you named YOUR app.
+        environment: environment,
+        rootURL: <span class="hljs-string">'/'</span>,
+        locationType: <span class="hljs-string">'auto'</span>,
+        EmberENV: {
+          FEATURES: {
+            <span class="hljs-comment">// Here you can enable experimental features on an ember canary build</span>
+            <span class="hljs-comment">// e.g. 'with-controller': true</span>
+          }
+        },
+
+        firebase: {
+          apiKey: <span class="hljs-string">'YOUR-API-KEY-HERE'</span>,
+          authDomain: <span class="hljs-string">'YOUR-FIREBASE-APP.firebaseapp.com'</span>,
+          databaseURL: <span class="hljs-string">'https://YOUR-FIREBASE-APP.firebaseio.com'</span>,
+          storageBucket: <span class="hljs-string">'YOUR-FIREBASE-APP.appspot.com'</span>
+        },
+
+        APP: {
+          ...
+          ...
+
+        </code></pre>
+        <p>This <code>firebase</code> section should be added <em>inside</em> the <code>ENV</code> section. Do not erase any other parts of the <code>ENV</code> section.</p>
+        <p>To retrieve the API key and URL for your own Firebase project, from the Firebase console for your project, click the <em>Add Firebase to your web app</em> button. A modal will open that includes your <em>apiKey</em>, <em>authDomain</em>, <em>databaseURL</em>, and <em>storageBucket</em>. Copy these into the appropriate spots in your <em>environment.js</em> file, as outlined above.</p>
+        <p>After installing and configuring EmberFire, you'll need to <strong>restart your server</strong> for changes to register!</p>
+        <h3>Importing Data to Firebase</h3>
+        <p><em>Note</em>: Pay close attention to singular/plural issues when you complete this step. Your database name should always be plural: "rentals", "students", "books" etc in a file called "rentals.json", "students.json" etc. This isn't just convention - Firebase can break and/or return incorrect information if you use singular instead of plural. </p>
+        <p>Before we add data to our store through our Ember application, we can manually import the data from our hard-coded model hook directly into Firebase. This will allow us see what it looks like in Firebase, and understand how data arrives from Ember. Pre-loading the database with hard-coded data in this manner is known as <strong>seeding</strong> the database. Eventually we will get rid of this pre-seeded data, and instead allow users to create new rentals directly through the user interface of our application. </p>
+        <p>First, we'll create a temporary <em>seed</em> file called <code>rentals.json</code> in the root directory of our project. It will contain our rental objects in <strong>JSON</strong> format. JSON stands for JavaScript Object Notation and is a standard format for communicating data between systems. We could actually put the file anywhere (even outside of the project directory), because it is not used by Ember. We are creating this file as a one-time thing simply to upload some hard-coded data to Firebase.</p>
+        <div>rentals.json</div>
+        <pre><code class="text">{ "rentals": [{
+          "owner": "Veruca Salt",
+          "city": "San Francisco",
+          "type": "Estate",
+          "bedrooms": 15,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+        }, {
+          "owner": "Mike Teavee",
+          "city": "Seattle",
+          "type": "Condo",
+          "bedrooms": 1,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg"
+        }, {
+          "owner": "Violet Beauregarde",
+          "city": "Portland",
+          "type": "Apartment",
+          "bedrooms": 3,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg"
+        }]
+      }
+    </code></pre>
+    <p>Navigate to the <em>Database</em> section of your Firebase console, and select the <em>Data</em> tab. From here, click the three dots on the right-hand side, and select <em>Import JSON</em> from the options menu: </p>
+    <p><img src="./MS CORE course-firebase_files/how-to-import-json-in-firebase.png" alt="Firebase import data screenshot" style="width: 110%;"></p>
+    <br>
+    <p>Then, select the JSON file you've just created, and hit <em>Import</em>:</p>
+    <p><img src="./MS CORE course-firebase_files/importing-data-into-firebase-console.png" alt="importing-data-into-firebase-console"></p>
+    <p>This uploading process is similar to what will happen when our Ember app sends and receives data from Firebase. Now, we have our original rentals persisting in our Firebase application.</p>
+    <h3>Altering Firebase Permissions</h3>
+    <p>Additionally, we'll have to let Firebase know that our application has permission to write to our new database. To do this, we can navigate to the <em>Rules</em> tab at the top of our Firebase console, and update the JSON to read:</p>
+    <pre><code class="hljs json">{
+      "<span class="hljs-attribute">rules</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">.read</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">.write</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      </span>}
+    </span>}
+
+  </code></pre>
+  <br>
+  <p><img src="./MS CORE course-firebase_files/updating-permissions-in-firebase.png" alt="updating-permissions-in-firebase" style="width: 100%;"></p>
+  <p>For now, this will allow <em>any</em> application with our unique Firebase URL to read and write to our database. </p>
+  <h3>Updating the Model Hook</h3>
+  <p>To use our new data store in our application, we need to update the model hook in our route handler:</p>
+  <div>app/routes/index.js</div>
+  <pre><code class="hljs javascript"><span class="hljs-keyword">import</span> Ember <span class="hljs-keyword">from</span> <span class="hljs-string">'ember'</span>;
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Ember.Route.extend({
+      model() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.store.findAll(<span class="hljs-string">'rental'</span>);
+      },
+    });
+  </code></pre>
+  <p>Here, we specify <code>this.store</code> to refer to the Firebase data store we've set up for our application. Then the <code>findAll</code> method with the argument <code>rental</code> instructs Ember Data to find <em>all</em> records of the type <code>rental</code> in the store, and return them to our application. </p>
+  <h3>Naming Conventions</h3>
+  <p>You may have noticed that the JSON we uploaded to Firebase defines an array of objects labelled rental<strong>s</strong> (plural), whereas the model hook above instructs Ember to return each object of the type rental (singular). </p>
+  <p>Ember and Firebase actually have built-in functionality to understand pluralization! It will know the "rentals" table in Firebase contains multiple "rental" objects. Generally speaking, <strong>your table names in Firebase will be a plural model name, and the model hooks in your routes will refer to the singular model name</strong>.</p>
+  <h3>Diagram</h3>
+  <p>Here is the updated structure of our application, with newly-edited files highlighted: </p>
+  <p><img src="./MS CORE course-firebase_files/ember-structure-with-added-model.png" alt="ember-structure-with-added-model" style="max-height: 250%; width: 100%;"></p>
+</section>
+</div>
