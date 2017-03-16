@@ -12,7 +12,8 @@ export default Ember.Component.extend({
       var params = {
         link: this.get('link'),
         name: this.get('name'),
-        description: this.get('description')
+        description: this.get('description'),
+        rating: this.set('rating',1)
       };
       this.set('link',"");
       this.set('name',"");

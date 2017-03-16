@@ -24,6 +24,11 @@
           </li>
           {{log blackboard.id}}
           {{#link-to 'discussion' blackboard.id}}<strong>Discussion</strong>{{/link-to}}
+          <button type="button" class="btn btn-default" {{action 'upVote' blackboard}}>up</button>
+          {{blackboard.rating}}
+          <button type="button" class="btn btn-default" {{action 'downVote' blackboard}}>down
+
+          </button>
             {{/each}}
         </ul>
     </div>

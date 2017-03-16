@@ -1,7 +1,8 @@
 { "blackboards": [{
     "link": "http://www.blackboard111.com",
     "name": "How to build a blackboard with ember",
-    "description": "Useful for trying to build a basic blackboard app for a class or group studying the same materials."
+    "description": "Useful for trying to build a basic blackboard app for a class or group studying the same materials.",
+    "rating": 1
   }],
 "angularsupps": [{
   "link": "http://www.blackboard111.com",
