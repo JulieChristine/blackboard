@@ -1,8 +1,7 @@
 { "blackboards": [{
     "link": "http://www.blackboard111.com",
     "name": "How to build a blackboard with ember",
-    "description": "Useful for trying to build a basic blackboard app for a class or group studying the same materials.",
-    "rating": 1
+    "description": "Useful for trying to build a basic blackboard app for a class or group studying the same materials."
   }],
 "angularsupps": [{
   "link": "http://www.blackboard111.com",
@@ -40,7 +39,34 @@
     "week":"1 (weekend work)",
     "content": "/angular-introduction.html",
     "toc": "CREATE FILE!!!!"
-  }]
+  }],
+  "events": [{
+    "description": "Lunch and learn",
+    "creator": "Ian",
+    "date":"",
+    "time": "2:00pm",
+    "duration": "1 hour"
+  }, {
+    "description": "Lightening talk",
+    "creator": "Ian",
+    "date":"",
+    "time": "6:00pm",
+    "duration": "20 mins"
+  }],
 
-
+  "days":[{
+    "today":"Monday"
+  },{
+    "today":"Tuesday"
+  },{
+    "today":"Wednesday"
+  },{
+    "today":"Thursday"
+  },{
+    "today":"Friday"
+  },{
+    "today":"Saturday"
+  },{
+    "today":"Sunday"
+}]
 }
