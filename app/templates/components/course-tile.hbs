@@ -1,11 +1,10 @@
-<!--Julie-->
+{{!--Julie--}}
 
-<!-- displays information about the course in a tile: only the name and course week, and the ToC-->
-
+{{!-- displays information about the course in a tile: only the name and course week, and the ToC--}}
 <div class="course-tile">
   {{course.name}}: {{course.week}}
 
-<!-- when you click on the ToC, you go to the course material -->
-  {{#link-to 'course' course.id}}{{course.name}}{{/link-to}}
+{{!-- when you click on the ToC, you go to the course material --}}
+  {{#link-to 'course' course.id}}<p>Go to course</p>{{/link-to}}
 
 </div>
