@@ -3,18 +3,14 @@
 
   <li>
 
-    {{event.description}}<br>
-    {{event.date}}<br>
-    {{event.time}}<br>
-    {{event.duration}}<br>
-    {{event.creator}}<br>
+    Event description: {{event.description}}<br>
+    Time of Event:{{event.time}}<br>
+    Event Duration:{{event.duration}}<br>
+    Event creator:{{event.creator}}<br>
 
     </li>
 
 
-<button {{action 'delete' event}}>Delete Event</button>
-
-<li>
-  {{#link-to 'calendar'}}
-  {{/link-to}}
-</li>
+<button {{action 'destroyEvent' event}}>Delete Event</button>
+<br>
+<br>

@@ -6,6 +6,5 @@ export default DS.Model.extend({
   time: DS.attr(),
   duration:DS.attr(),
   creator: DS.attr(),
-  date:DS.attr(),
   day: DS.belongsTo('day', { async: true }),
 });

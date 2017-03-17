@@ -2,8 +2,6 @@
 
 <ul>
   {{#each model as |student|}}
-  {{student-tile student=student update="update"}}
+  {{student-tile student=student}}
   {{/each}}
 </ul>
-
-{{new-student saveStudent="saveStudent"}}

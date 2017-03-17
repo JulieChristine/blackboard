@@ -13,7 +13,6 @@ export default Ember.Component.extend({
       time: this.get('time'),
       duration: this.get('duration'),
       description: this.get('description'),
-      date:this.get('date'),
       day:this.get('day')
     };
     this.set('addNewEvent', false);
