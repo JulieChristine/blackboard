@@ -1,93 +1,101 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "ember-bootstrap/bootstrap";
+
+// *{
+//   border: solid 1px black;
+// }
 
 body{
   font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
 }
 
 /**** Header styling****/
 .header-title{
   text-align: center;
+  margin: 10px;
 }
 
 .header-subtitle{
   text-align: center;
+  text-transform: uppercase;
 }
 
-h1 {
+h1, h2, h3, h4, a {
   color: rgb(215, 30, 38);
+  text-shadow: 1px rgba(0, 0, 0, 0.2);
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 
 /****** Navigation bar styling*****/
-
-.icon-bar{
-  padding: 2px;
-  background-color: #564a47;
+.navbar-brand{
+  color: rgb(102, 119, 136);
 }
-.navbar.navbar-inverse {
-  background-color: transparent;
-  border: none;
+.navbar-right li{
+  color:rgb(102, 119, 136);
 }
-.navbar-header {
-  float: none;
-}
-.navbar-toggle {
-  display: block;
-  border: 1px solid #564a47;
-  background-color: transparent;
-  color: #564a47;
-}
-.navbar-toggle:hover {
-  background-color: transparent;
-  opacity: 0.5;
-  color: #564a47;
-}
-.navbar-collapse {
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-  float: right;
-  margin-right: 5px;
-}
-.navbar-collapse.collapse {
-  display: none;
-  border: none;
-}
-.navbar-nav {
-  float: none;
-  margin: 7.5px -15px;
-  font-family: ‘Open Sans’, sans-serif;
-  font-size: 20px;
-  color: #564a47 ;
-   }
-.navbar-nav>li {
-  float: none;
-}
-.navbar-nav>li>a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.navbar-text {
-  float: none;
-  margin: 15px 0;
+.navbar-nav > li > a{
+  color:rgb(102, 119, 136);
 }
 
-.navbar-collapse.collapse.in {
-  display: block;
-  border: none;
-  float: right;
-  color: #564a47 ;
+.navbar-nav{
+  float:none;
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
 }
-.collapsing {
-  overflow: hidden;
-  border: none;
+
+/****** footer ***********/
+.footer{
+  width:100%;
+  height: 80px;
+  color: rgb(102, 119, 136);
+  text-align: center;
+  margin-top: 50px;
 }
-.navitem {
-  color: #564a47;
+/*** Images general****/
+
+img{
+  width:200px;
+  height: 150px;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
-.navitem:hover {
-  opacity: 0.5;
+
+.item-listing{
+  color: #000;
+  font-size: 30px;
 }
+
+/**** Buttons ****/
+.btn {
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 999px;
+  border: solid 3px #c90016;
+  font-size: 12px;
+  display: inline-block;
+  text-decoration: none;
+  margin:12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/**** Index page ****/
+.welcome-msg{
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.index-tile{
+  border: solid 1px black;
+}
+
 
 
 
@@ -127,6 +135,3 @@ height: 50px;
   margin: 10px;
   font-size: 20px;
 }
-
-
-@import "ember-bootstrap/bootstrap";
