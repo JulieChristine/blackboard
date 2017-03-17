@@ -1,10 +1,43 @@
-<h1>This is our Blackboard application</h1>
-{{outlet}}
-<br>
-<br>
-<div class="row" id="indexlineup">
-  <div class="col-md-3" style="border: 1px solid black; height: 300px ; width: 300px;">
-    <h3 style="margin-top: 40px">{{#link-to 'supplementarymaterials'}}Supplementary materials{{/link-to}}</h3>
-    <p><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/89540-200.png"></p>
+<div class="welcome-msg">
+  <img src="/assets/images/coding.jpeg">
+  <h2>Welcome to Accelerate HK blackboard</h2>
+</div>
+
+
+<div class="index-tile">
+  <div class="course-frame">
+    <div class="col-md-4">
+      <div class="item-listing">
+        <h4>{{#link-to 'subject'}}Course Materials{{/link-to}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="announcement-frame">
+    <div class="col-md-4">
+      <div class="item-listing">
+        <h4>{{#link-to 'announcement'}}Announcement{{/link-to}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="supplement-frame">
+    <div class="col-md-4">
+      <div class="item-listing">
+        <h4>{{#link-to 'supplementarymaterials'}}Supplementary Materials{{/link-to}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="calendar-frame">
+    <div class="col-md-4">
+      <div class="item-listing">
+        <h4>{{#link-to 'calendar'}}Calendar{{/link-to}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="contact-frame">
+    <div class="col-md-4">
+      <div class="item-listing">
+        <h4>{{#link-to 'contact'}}Contact{{/link-to}}</h4>
+      </div>
+    </div>
   </div>
 </div>

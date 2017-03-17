@@ -2,9 +2,13 @@
 
 {{!-- displays information about the course in a tile: only the name and course week, and the ToC--}}
 <div class="course-tile">
-  {{course.name}}: {{course.week}}
+  <div class="course-tile-info">
+    {{course.name}}: {{course.week}}
+  </div>
 
 {{!-- when you click on the ToC, you go to the course material --}}
-  {{#link-to 'course' course.id}}<p>Go to course</p>{{/link-to}}
+<div>
+  <button class="btn">{{#link-to 'course' course.id}}Go to course{{/link-to}}</button>
+</div>
 
 </div>
