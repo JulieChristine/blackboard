@@ -23,21 +23,18 @@
   }],
   "courses": [{
     "name": "Ember Introduction",
-    "image": "",
     "week":"2 (weekend work)",
     "content": "/introduction",
     "toc": "CREATE FILE!!!!"
   }, {
     "name": "Ember Firebase",
-    "image": "",
     "week":"2 (weekend work)",
-    "content": "/ember-firebase.html",
+    "content": "/course-firebase",
     "toc": "CREATE FILE!!!!"
   }, {
     "name": "Angular Introduction",
-    "image": "",
     "week":"1 (weekend work)",
-    "content": "/angular-introduction.html",
+    "content": "/course-angular",
     "toc": "CREATE FILE!!!!"
   }],
 
