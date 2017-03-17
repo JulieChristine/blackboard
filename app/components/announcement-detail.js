@@ -6,10 +6,10 @@ export default Ember.Component.extend({
 
   actions:{
     update(announcement, params){
-      this.sendAction('update', announcement, params)
+      this.sendAction('update', announcement, params);
     },
     delete(announcement){
-      this.sendAction("destroyAnnouncement", announcement)
+      this.sendAction("destroyAnnouncement", announcement);
     }
   }
 });
