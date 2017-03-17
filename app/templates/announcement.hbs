@@ -1,7 +1,15 @@
-{{new-announcement saveAnnouncement="saveAnnouncement"}}
+<div class="container-fluid">
+
+  {{new-announcement saveAnnouncement="saveAnnouncement"}}
 
 
-<!-- left(variable) = right(model) -->
-<ul>
-    {{announcement-detail announcements= model update="update" destroyAnnouncement="destroyAnnouncement"}}
-</ul>
+  <!-- left(variable) = right(model) -->
+
+  <div class="an-list">
+    <ul>
+      {{announcement-detail announcements= model update="update" destroyAnnouncement="destroyAnnouncement"}}
+    </ul>
+  </div>
+
+
+</div>

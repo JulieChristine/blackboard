@@ -1,6 +1,9 @@
+
 {{#each sortedAnnouncements as |announcement|}}
-  <li>Announcement: {{announcement.content}}</li>
-  <li>Date: {{announcement.date}}</li>
-  <li>Author: {{announcement.author}}</li>
+  <li>
+  Announcement: {{announcement.content}} <br>
+  Date: {{announcement.date}} <br>
+  Author: {{announcement.author}} <br>
+  </li>
   {{update-announcement announcement=announcement update="update" destroyAnnouncement="delete" announcement=announcement}}
 {{/each}}
