@@ -8,7 +8,6 @@ export default Ember.Component.extend({
       author: this.get('author'),
       blackboard: this.get('discussion')
     };
-    debugger;
     this.sendAction('saveAnswer', params);
   }
   }
