@@ -20,8 +20,9 @@
         <ul style="list-style: none;">
             {{#each model as |angularsupp|}}
           <li>
-            {{submission-tile blackboard=angularsupp}}
+            {{submission-tile blackboard=angularsupp upVote="upVote" downVote="downVote"}}
           </li>
+          {{log blackboard.id}}
             {{/each}}
         </ul>
     </div>

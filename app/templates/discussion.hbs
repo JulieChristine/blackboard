@@ -1,4 +1,4 @@
-<div>
+<!-- <div> -->
 <div  style="float: right; margin-right: 300px">
 <h1> Discussion for: {{model.name}} </h1>
 <h3>Discussion points:</h3>
@@ -9,7 +9,14 @@
   <li>What type of learner would benefit from this material?</li>
 </ul>
 </div>
-<div  style="float: left; margin-left: 100px">
+<div>
+  {{new-comment saveAnswer="saveAnswer" discussion=model}}
+</div>
+{{#each model.discussions as |discussion|}}
+<li><span style="font-weight: bold;">{{discussion.author}} Comment:</span> {{discussion.comment}}</li>
+  <br>
+{{/each}}
+<!-- <div  style="float: left; margin-left: 100px">
   <h1>New Review</h1>
   <div>
     <form>
@@ -26,4 +33,4 @@
     </form>
   </div>
   </div>
-</div>
+</div> -->
