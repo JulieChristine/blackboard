@@ -1,21 +1,39 @@
 <!-- <div> -->
-<div  style="float: right; margin-right: 300px">
-<h1> Discussion for: {{model.name}} </h1>
-<h3>Discussion points:</h3>
-<ul>
-  <li>Was it useful for you?</li>
-  <li>At what point in the curriculum did you find it most helpful?</li>
-  <li>Was it easy to digest</li>
-  <li>What type of learner would benefit from this material?</li>
-</ul>
+<div style="text-align: center">
 </div>
-<div>
-  {{new-comment saveAnswer="saveAnswer" discussion=model}}
+<br>
+<div class="row">
+    <div class="col-md-2" id="leftfixed">
+       <div class="affix" style="margin-left: -80px;">
+         <img style="" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3878-200.png"/>
+         <div style="margin-left:-130px" class="mycontent-left">
+           {{new-comment saveAnswer="saveAnswer" discussion=model}}
+       </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+      <div class="mycontent-right-discussion">
+        <ul style="list-style: none;">
+          <h1> Discussion for: {{model.name}} </h1>
+      <h3>Discussion points:</h3>
+  <ul>
+    <li>Was it useful for you?</li>
+    <li>At what point in the curriculum did you find it most helpful?</li>
+    <li>Was it easy to digest</li>
+    <li>What type of learner would benefit from this material?</li>
+  </ul>
+  <hr>
+      {{#each model.discussions as |discussion|}}
+        <li><span style="font-weight: bold;">{{discussion.author}} says:</span> {{discussion.comment}}</li>
+        <br>
+
+      {{/each}}
+        </ul>
+    </div>
 </div>
-{{#each model.discussions as |discussion|}}
-<li><span style="font-weight: bold;">{{discussion.author}} Comment:</span> {{discussion.comment}}</li>
-  <br>
-{{/each}}
+</div>
+
+
 <!-- <div  style="float: left; margin-left: 100px">
   <h1>New Review</h1>
   <div>

@@ -2,10 +2,20 @@
 
 
 <!--this is a title-->
- Calendar for the week:
-
-<ul>
+<wrapper class="calendar">
+<div>
+<div class="col-md-4">
+</div>
+<div class="col-md-4" id="container-calendar">
+  <span style="font-size: 40px">Calendar for the week:</span>
+<br>
+<ul style="list-style: none;">
   {{#each model.days as |day|}}
-  {{day-tile day=day}}
+  <li class="calendar-day">{{day-tile day=day}}</li>
   {{/each}}
 </ul>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</wrapper>

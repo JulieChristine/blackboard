@@ -98,7 +98,35 @@ h1 {
 #leftfixed {
 }
 .mycontent-right {
-  margin-left: 200px;
+  // margin-left: 200px;
 }
+
+
+/* Styling for Calendar */
+
+.calendar {
+// width: 300px;
+text-align: center;
+
+}
+
+#container-calendar {
+width: 500px;
+text-align: center;
+margin-left: -60px;
+}
+
+.calendar-day {
+border-radius: 10px;
+border: solid 3px #ff3333;
+height: 50px;
+}
+
+.day-of-week {
+  // vertical-align: middle !important;
+  margin: 10px;
+  font-size: 20px;
+}
+
 
 @import "ember-bootstrap/bootstrap";
