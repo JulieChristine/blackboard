@@ -17,9 +17,9 @@
         {{input value=description id="description" placeholder="a little something extra"}}
       </div>
 
-      <button {{action 'saveLink'}}>Submit</button>
+      <button class="btn" {{action 'saveLink'}}>Submit</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'linkFormShow'}}>Submit a New Link</button>
+  <button class="btn" {{action 'linkFormShow'}}>Submit a New Link</button>
  {{/if}}

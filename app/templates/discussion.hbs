@@ -1,22 +1,19 @@
 <!-- <div> -->
-<div style="text-align: center">
-</div>
-<br>
 <div class="row">
     <div class="col-md-2" id="leftfixed">
-       <div class="affix" style="margin-left: -80px;">
-         <img style="" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3878-200.png"/>
-         <div style="margin-left:-130px" class="mycontent-left">
+       <div class="affix">
+         <img class="pictogram" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3878-200.png"/>
+         <div class="mydiscussion-left">
            {{new-comment saveAnswer="saveAnswer" discussion=model}}
        </div>
         </div>
     </div>
     <div class="col-md-10">
       <div class="mycontent-right-discussion">
-        <ul style="list-style: none;">
-          <h1> Discussion for: {{model.name}} </h1>
-      <h3>Discussion points:</h3>
-  <ul>
+        <ul>
+          <h3> Discussion for: {{model.name}} </h3>
+      <h4>Discussion points:</h4>
+  <ul class="discussion-list">
     <li>Was it useful for you?</li>
     <li>At what point in the curriculum did you find it most helpful?</li>
     <li>Was it easy to digest</li>
@@ -24,7 +21,7 @@
   </ul>
   <hr>
       {{#each model.discussions as |discussion|}}
-        <li><span style="font-weight: bold;">{{discussion.author}} says:</span> {{discussion.comment}}</li>
+        <li><span id="discussion-span">{{discussion.author}} says:</span> {{discussion.comment}}</li>
         <br>
 
       {{/each}}

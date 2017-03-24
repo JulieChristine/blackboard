@@ -8,8 +8,8 @@ export default Ember.Component.extend({
       author: this.get('author'),
       blackboard: this.get('discussion')
     };
-    this.sendAction('saveAnswer', params),
-    this.set('author', ""),
+    this.sendAction('saveAnswer', params);
+    this.set('author', "");
     this.set('comment',"");
   }
   }

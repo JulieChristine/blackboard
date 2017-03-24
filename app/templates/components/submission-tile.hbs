@@ -3,6 +3,6 @@
 </h2>
 {{blackboard.description}}<br>
 {{#link-to 'discussion' blackboard.id}}<strong>Discussion</strong>{{/link-to}}
-<button type="button" class="btn btn-default glyphicon glyphicon-thumbs-up" {{action 'upVote' blackboard}}></button>
+<button class="btn" type="button" class="btn btn-default glyphicon glyphicon-thumbs-up" {{action 'upVote' blackboard}}></button>
 {{blackboard.rating}}
-<button type="button" class="btn btn-default glyphicon glyphicon-thumbs-down" {{action 'downVote' blackboard}}></button>
+<button class="btn" type="button" class="btn btn-default glyphicon glyphicon-thumbs-down" {{action 'downVote' blackboard}}></button>

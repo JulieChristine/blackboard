@@ -60,8 +60,8 @@ h1, h2, h3, h4, a {
 
 img{
   width:200px;
-  height: 150px;
-  border: 1px solid #eee;
+  height: 200px;
+  // border: 1px solid #eee;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -74,7 +74,7 @@ img{
 /**** Buttons ****/
 .btn {
   background-color: #fff;
-  color: #fff;
+  color: #c90016;
   text-align: center;
   border-radius: 999px;
   border: solid 3px #c90016;
@@ -85,6 +85,12 @@ img{
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.btn:hover {
+  color: #c90016 0.8;
+}
+
+
 
 /**** Index page ****/
 .welcome-msg{
@@ -100,13 +106,38 @@ img{
 
 
 /**** Styling by Steve*****/
+.angular-style{
+  text-align: center;
+}
+
 .mycontent-left {
+  margin-left: 15px;
 }
 
 #leftfixed {
 }
 .mycontent-right {
-  // margin-left: 200px;
+  list-style: none;
+}
+
+.affix{
+  margin-left: 0px;
+}
+
+.mydiscussion-left{
+  margin-left:-130px;
+}
+
+.discussion-list{
+  list-style: none;
+}
+#discussion-span{
+  font-weight: bold;
+  font-size: 14px;
+}
+.pictogram{
+  height: 150px;
+  width: 150px;
 }
 
 
@@ -124,9 +155,13 @@ text-align: center;
 margin-left: -60px;
 }
 
+span {
+  font-size: 40px;
+}
+
 .calendar-day {
 border-radius: 10px;
-border: solid 3px #ff3333;
+border: solid 3px #c90016;
 height: 50px;
 }
 
@@ -134,4 +169,8 @@ height: 50px;
   // vertical-align: middle !important;
   margin: 10px;
   font-size: 20px;
+}
+
+.calendar-list{
+  list-style: none;
 }

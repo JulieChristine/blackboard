@@ -7,9 +7,9 @@
 <div class="col-md-4">
 </div>
 <div class="col-md-4" id="container-calendar">
-  <span style="font-size: 40px">Calendar for the week:</span>
+  <span> Calendar for the week:</span>
 <br>
-<ul style="list-style: none;">
+<ul class="calendar-list">
   {{#each model.days as |day|}}
   <li class="calendar-day">{{day-tile day=day}}</li>
   {{/each}}

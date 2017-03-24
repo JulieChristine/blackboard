@@ -10,9 +10,9 @@
         <label for="info">Info</label>
         {{input value=info id="info" placeholder=student.info}}
       </div>
-      <button {{action 'update' student}}>Save</button>
+      <button class="btn" {{action 'update' student}}>Save</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'updateRentalForm'}}>Update</button>
+  <button class="btn" {{action 'updateRentalForm'}}>Update</button>
 {{/if}}
